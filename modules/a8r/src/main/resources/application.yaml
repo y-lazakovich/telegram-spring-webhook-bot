@@ -11,7 +11,6 @@ spring:
     url: jdbc:mariadb://localhost:3306/a8r
     username: root
     password: root
-    driver-class-name: org.mariadb.jdbc.Driver
 
   jpa:
     hibernate:

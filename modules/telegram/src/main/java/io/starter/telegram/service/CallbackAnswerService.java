@@ -6,7 +6,7 @@ import java.util.Objects;
 import io.starter.telegram.cash.state.CallbackState;
 import io.starter.telegram.constants.Constants;
 import io.starter.telegram.constants.Emoji;
-import io.starter.telegram.constants.LeagueSetting;
+import io.starter.telegram.constants.League;
 import io.starter.telegram.dao.SkillDao;
 import io.starter.telegram.dao.UserDao;
 import io.starter.telegram.entity.LeagueEntity;
@@ -40,8 +40,8 @@ public class CallbackAnswerService {
   }
 
   public AnswerCallbackQuery onClickSetting(CallbackQuery callbackQuery) {
-    LeagueSetting leagueSetting = LeagueSetting.byCallbackState(CallbackState.byData(callbackQuery.getData()));
-    userDao.saveLeague(callbackQuery.getFrom(), Objects.requireNonNull(leagueSetting));
+    League league = League.byCallbackState(CallbackState.byData(callbackQuery.getData()));
+    userDao.saveLeague(callbackQuery.getFrom(), Objects.requireNonNull(league));
     return AnswerCallbackQueryGenerator.generateAnswerCallbackQuery(callbackQuery.getId());
   }
 

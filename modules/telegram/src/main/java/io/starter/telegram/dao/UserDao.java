@@ -2,7 +2,7 @@ package io.starter.telegram.dao;
 
 import java.util.Objects;
 
-import io.starter.telegram.constants.LeagueSetting;
+import io.starter.telegram.constants.League;
 import io.starter.telegram.entity.LeagueEntity;
 import io.starter.telegram.entity.UserEntity;
 import io.starter.telegram.repo.LeagueRepository;
@@ -47,7 +47,7 @@ public class UserDao {
   }
 
   public void saveLeague(User user,
-                         LeagueSetting setting) {
+                         League setting) {
     UserEntity userEntity = userRepository.findByUserId(user.getId());
     LeagueEntity leagueEntity = leagueRepository.findById(setting.id);
     userEntity.setLeagueId(leagueEntity);

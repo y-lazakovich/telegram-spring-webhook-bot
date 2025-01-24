@@ -1,7 +1,7 @@
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:$spring")
     implementation("org.springframework.boot:spring-boot-starter-webflux:$spring")
-    implementation("org.hibernate:hibernate-jcache:$jcache")
+    implementation("org.hibernate.orm:hibernate-jcache:$hibernate")
     implementation("org.mariadb.jdbc:mariadb-java-client:$mariadb")
     implementation("org.flywaydb:flyway-core:$flyway")
     implementation("org.flywaydb:flyway-mysql:$flyway")

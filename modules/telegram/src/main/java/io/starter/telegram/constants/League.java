@@ -2,7 +2,7 @@ package io.starter.telegram.constants;
 
 import io.starter.telegram.cash.state.CallbackState;
 
-public enum LeagueSetting {
+public enum League {
 
   STANDARD(1L, CallbackState.SETTING_STANDARD),
   LEAGUE(9L, CallbackState.SETTING_LEAGUE),
@@ -12,15 +12,15 @@ public enum LeagueSetting {
   public final long id;
   public final CallbackState state;
 
-  LeagueSetting(Long id, CallbackState state) {
+  League(Long id, CallbackState state) {
     this.id = id;
     this.state = state;
   }
 
-  public static LeagueSetting byCallbackState(CallbackState state) {
-    for (LeagueSetting leagueSetting : LeagueSetting.values()) {
-      if (leagueSetting.state.equals(state)) {
-        return leagueSetting;
+  public static League byCallbackState(CallbackState state) {
+    for (League league : League.values()) {
+      if (league.state.equals(state)) {
+        return league;
       }
     }
     return null;
